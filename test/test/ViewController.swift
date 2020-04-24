@@ -14,10 +14,6 @@ class ViewController: UIViewController {
     let red = Red(frame: CGRect(x: 200, y: 200, width: 100, height: 100))
     
     
-    let red_t = Red(frame: CGRect(x: 200, y: 200, width: 100, height: 100))
-    
-    
-    
     var animaT = true
     
     override func viewDidLoad() {
@@ -26,29 +22,19 @@ class ViewController: UIViewController {
         
         
         view.addSubview(red)
-        view.addSubview(red_t)
+
     }
 
     
     
     
     @IBAction func startAnima(_ sender: UIButton) {
-        red_t.stopAnima()
+       
         red.stopAnima()
         
-        red_t.isHidden = true
-        red.isHidden = true
-        
-        
-        if animaT{
-            red.isHidden = false
-            red.startAnimating()
-        }
-        else{
-            red_t.isHidden = false
-            red_t.startAnimating()
-        }
-        animaT.toggle()
+        CATransaction.flush()
+        red.startAnimating()
+    
         
     }
     
