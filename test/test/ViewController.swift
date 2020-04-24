@@ -13,13 +13,9 @@ class ViewController: UIViewController {
     
     let red = Red(frame: CGRect(x: 200, y: 200, width: 100, height: 100))
     
-    
-    var animaT = true
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         
         view.addSubview(red)
 
